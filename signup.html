@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up Form</title>
+</head>
+
+<body>
+    <!-- <img class="background-image" src="life.jpeg" alt=""> -->
+    <h1>Complete Sign Up</h1>
+    <h2>FOSOL</h2>
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" name="firstname" value="" required>
+
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" name="lastname" value=""
+                required>
+
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend"></span>
+                    <input type="text" class="form-control" id="validationCustomUsername" name="username" placeholder="Username"
+                        aria-describedby="inputGroupPrepend" required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Choose City</label><br>
+                <select id="validationCustom03" placeholder="Enter City" name="city" required name="city">
+                    <option value="Dhaka" selected>Dhaka</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Barisal">Barisal</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Mymensign">Mymengingh</option>
+                </select><br>
+            </div>
+            </select>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Mobile No</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend"></span>
+                <input type="text" class="form-control" id="validationCustomUsername" name="mobilenumber" placeholder="Mobile Number"
+                    aria-describedby="inputGroupPrepend" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Bith Date</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend"></span>
+                <label for="birthDate"></label>
+                <input type="date" class="form-control" id="validationCustomUsername" name="birthdate" placeholder=""
+                aria-describedby="inputGroupPrepend" required required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Password</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend"></span>
+                <input type="text" class="form-control" id="validationCustomUsername" name="password" placeholder="Password"
+                    aria-describedby="inputGroupPrepend" required>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    I Am Agree to terms and conditions
+                </label>
+
+            </div><br>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+    </form>
+</body>
+
+</html>

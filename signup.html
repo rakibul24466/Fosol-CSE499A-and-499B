@@ -3,39 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css">
-    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="/Portfolio/Portfolio/Css/portfoliodesktop.css" media="screen and (min-width: 992px)">
 </head>
 
 <body>
-    <!-- <img class="background-image" src="life.jpeg" alt=""> -->
-    <h1>Complete Sign Up</h1>
-    <h2>FOSOL</h2>
-    <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">First name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" name="firstname" value="" required>
 
-        </div>
-        <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" name="lastname" value=""
-                required>
+        <nav class="navbar">
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <button id="menu">Menu</button>
+            </div>
+            <div class="navbar-options" id="navbarOptions">
+                <a href="login.html" target="_blank"><button id="btn" type="button">LOGIN</button></a>
+                <a href="about.html" target="_blank"><button id="btn" type="button">ABOUT US</button></a>
+                <a href="service.html" target="_blank"><button id="btn" type="button">SERVICES</button></a><br>
+            </div>     
+        </nav>
+    <div class="intro">
+        <p id="intro">FOSOL</p>
+    </div>
+    <div class="container">
+        <h1>Complete Sign Up</h1>
 
-            <div class="col-md-4">
-                <label for="validationCustomUsername" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend"></span>
-                    <input type="text" class="form-control" id="validationCustomUsername" name="username" placeholder="Username"
-                        aria-describedby="inputGroupPrepend" required>
-                </div>
+        <form action="signup.php" method="post">
+
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="first_name" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="last_name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobile_number" placeholder="Mobile Number" required>
             </div>
 
-            <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Choose City</label><br>
-                <select id="validationCustom03" placeholder="Enter City" name="city" required name="city">
+            <div class="form-group">
+                <label for="sex">Sex:</label><br>
+                <select name="sex" required>
+                    <option value="">Select your sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br>
+            </div>
+            <div>
+                <label for="city" >Choose City</label><br>
+                <select placeholder="Enter City" name="city" required name="city">
                     <option value="Dhaka" selected>Dhaka</option>
                     <option value="Sylhet">Sylhet</option>
                     <option value="Barisal">Barisal</option>
@@ -46,47 +64,88 @@
                     <option value="Mymensign">Mymengingh</option>
                 </select><br>
             </div>
-            </select>
-        </div>
-        </div>
-        <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Mobile No</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend"></span>
-                <input type="text" class="form-control" id="validationCustomUsername" name="mobilenumber" placeholder="Mobile Number"
-                    aria-describedby="inputGroupPrepend" required>
+            <div class="form-group">
+                <label for="birthDate">Birth Date:</label>
+                <input type="date" id="birthDate" name="birthDate"  required>
             </div>
-        </div>
-        <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Bith Date</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend"></span>
-                <label for="birthDate"></label>
-                <input type="date" class="form-control" id="validationCustomUsername" name="birthdate" placeholder=""
-                aria-describedby="inputGroupPrepend" required required>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Password</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend"></span>
-                <input type="text" class="form-control" id="validationCustomUsername" name="password" placeholder="Password"
-                    aria-describedby="inputGroupPrepend" required>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                    I Am Agree to terms and conditions
-                </label>
 
-            </div><br>
-        </div>
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Sign Up</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required> 
+            </div>        
+            <br>
+            <button type="submit" name="save">Sign Up</button>
+            <div class="signup-prompt">
+                <p>Already Have An Account? <a href="login.html" target="_blank">Log In</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+                function toggleNavbar() {
+            const navbarOptions = document.getElementById("navbarOptions");
+            navbarOptions.classList.toggle("show");
+        }
+        function toggleNavbar() {
+    const navbarOptions = document.getElementById("navbarOptions");
+    navbarOptions.classList.toggle("show");
+}
+//About Me Starts
+function toggleButtons(buttonId) {
+    const buttonSection = document.querySelector(".button-section");
+    const buttons = buttonSection.querySelectorAll("button");
+    
+    buttons.forEach(button => {
+        if (button.id === buttonId) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+}
+
+function navigateToAbout() {
+    window.location.href = "about.html"; // Navigate to the about.html file
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add any additional initialization code if needed
+});
+//About Mr Ends
+
+//Services Starts
+function toggleButtons(buttonId) {
+    const buttonSection = document.querySelector(".button-section");
+    const buttons = buttonSection.querySelectorAll("button");
+    
+    buttons.forEach(button => {
+        if (button.id === buttonId) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+}
+
+function navigateToService() {
+    window.location.href = "service.html"; // Navigate to the about.html file
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add any additional initialization code if needed
+});
+//Services Ends
+
+    </script>
+
+<footer>
+    <p id="cr">&copy; 2023 FOSOL</p>
+</footer>
+
 </body>
 
 </html>

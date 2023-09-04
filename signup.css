@@ -1,149 +1,105 @@
-body {
-    display: flex;
-    font-family: Arial, sans-serif;
-    background-color: #354f52;
-}
-html {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 60px;
-    margin-top: 40px;
-}
 
-.navbar-toggle {
-    display: inline;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative; 
-    height: 40px;
-    cursor: pointer; 
-}
-#menu{
-    width: 100px;
-    margin-right: 150px;
-    margin-top: 5px;
-    background-color: #354f52;
-    font-size: 20px;
-}
-#menu:hover {
-    background: rgb(20, 127, 228);
-}
-.navbar{
-    float: left;
-}
-.navbar-options {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    right: 1767px;
-    background-color: #354f52;
-    border-radius: 5px;
-    
-}
-#btn{
-    background-color: #777;
-}
-#btn:hover{
-    background-color: tomato;
-}
-#navbarOptions a {
-    
-    color: #000000;
-    text-decoration: none;
-    padding: 10px 0;
-}
-
-.show {
-    display: flex;
-}
-
-form {
-    max-width: 500px;
-    background-color: #D3D3D3;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
-}
-.form-group{
-    margin-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 300px;
-}
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-}
-
-#intro{
-    background-color: #354f52;
-height: 400px;
-width: 500px;
-color: rgb(255, 255, 255);
-margin-right: 700px;
-margin-top: 300px;
-font-size: 70px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.form-group .validation-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-    text-align: center;
-}
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-    margin-left: 100px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.signup-prompt {
-    margin-top: 20px;
-    text-align: center;
-    color: #383535;
-}
-
-.signup-prompt a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.signup-prompt a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     form {
         max-width: 90%;
     }
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    padding: 50px;
+    background-color: #354f52;
+    color: #fff;
+    text-align: center;
+}
+
+.left-section h1 {
+    font-size: 48px;
+}
+
+.left-section p {
+    font-size: 24px;
+}
+
+.right-section {
+    flex: 1;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.right-section h2 {
+    font-size: 36px;
+    color: #354f52;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="password"] {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #f2a154;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f07422;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+nav{
+    margin-top: 20px;
+}
+a:hover{
+    color: #f07422;
 }
 footer {
     background-color: #354f52;
@@ -159,4 +115,10 @@ footer {
     margin-top: 15px;
     color: rgb(255, 255, 255);
     text-align: center;
+} 
+#city{
+    margin-right: 325px;
+}
+#sex{
+    margin-right: 145px;
 }

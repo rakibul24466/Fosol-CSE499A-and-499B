@@ -1,36 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="welcome.css">
-    <link rel="stylesheet" href="/Portfolio/Portfolio/Css/portfoliodesktop.css" media="screen and (min-width: 992px)">
-    <title>Welcome to Our Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat&family=Satisfy&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    rel="stylesheet">
+    <title>Fosol Welcome</title>
 </head>
-
 <body>
+   
     <header>
-        <nav class="navbar">
-            <h1>Welcome to FOSOL</h1>
+        <h1 id="title">FOSOL</h1>
+        <p style="text-align: center;">Your Trusted Partner in Agriculture</p><br>
+        <nav>
             <ul>
                 <li><a href="welcome.html">Home</a></li>
-                <li><a href="login.html" target="_blank">Login</a></li>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+                <li><a href="service.html" target="_blank">Services</a></li>
+                <li><a href="#" target="_blank">Contact</a></li>
                 <li><a href="signup.html" target="_blank">Sign Up</a></li>
-                <li><a href="#" target="_blank">About</a></li>
-                <li><a href="#" target="_blank">Services</a></li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+                <li><a href="#" target="_blank">Useful Links</a></li>
             </ul>
         </nav>
     </header>
-
-    <section class="welcome">
-        <h2>Hello, Guest!</h2>
-        <p>We're glad you're here.</p>
+    <section class="features">
+        <div class="feature">
+            <img src="tractor.png" alt="Tractor">
+            <h2>Modern Equipment</h2>
+            <p>We use state-of-the-art farming equipment to maximize solutionivity.</p>
+        </div>
+        <div class="feature">
+            <img src="crops.jpeg" alt="Crops">
+            <h2>Quality Produce</h2>
+            <p>Our commitment to quality ensures the best crops for our customers.</p>
+        </div>
+        <div class="feature">
+            <img src="farmers.png" alt="Farmers">
+            <h2>Experienced Team</h2>
+            <p>Our team of skilled farmers has years of experience in the industry.</p>
+        </div>
     </section>
+    <div class="details">
+        <h2 style="padding-top: 10px;" id="details">Our Solutions</h2>
+    </div>
+   
+        <section class="solutions">
+            <div class="solution">
+                <img src="supplychain.png" alt="solution 1">
+                <h2>Transparent Supply Chain Using Blockchain</h2>
+            </div>
+            <div class="solution">
+                <img src="marketplace.jpeg" alt="solution 2">
+                <h2>Decentralized Marketplace</h2>
+            </div>
+            <div class="solution">
+                <img src="weather.png" alt="solution 1">
+                <h2>Weather Forecasing</h2>
+            </div>
+            <div class="solution">
+                <img src="intellegence.png" alt="solution 2">
+                <h2>Market Intelligence</h2>
+            </div>
+            <div class="solution">
+                <img src="voice.jpeg" alt="solution 1">
+                <h2>Bangla Voice Command</h2>
+            </div>
+            <div class="solution">
+                <img src="training.png" alt="solution 2">
+                <h2>Training and Resources</h2>
+            </div>
+    </section>
+    <div class="details">
+        <h2 style="padding-top: 10px;" id="details">Contact With Us</h2>
+    </div>
+    
+    <div class="information">
+        <div class="cnt">
+            <div class="media-buttons">
 
+                <button class="btnn" onclick="window.open('https://www.facebook.com/aasifbhuiyan/')"
+                    class="btn request-callback"><i class="fa fa-facebook" style="color:  #3b5998;"
+                        aria-hidden="true"></i></button>
+                <button class="btnn" onclick="window.open('https://about.me/asif.bhuiyan')"
+                    class="btn request-callback"> <span style="font-size: 1.7rem;">&#127760;</span> </i></button>
+                <button class="btnn" onclick="window.open(' https://github.com/asifbhuiyann')"
+                    class="btn request-callback"><i class="fa fa-github" aria-hidden="true"
+                        style="color: #000000;"></i></button>
+            </div>
+        </div>
+        <div class="cntt">
+            <p></p>
+        </div>
+        <div class="cnttt">
+            <p></p>
+        </div>
+    </div>
+        
     <footer>
-        <p id="cr">&copy; 2023 FOSOL.</p>
+        <p>&copy; 2023 FOSOL.</p>
     </footer>
 </body>
-
 </html>

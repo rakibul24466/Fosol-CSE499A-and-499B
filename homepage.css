@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #354f52;
+    background-color: #2e4d1d;
     color: #fff;
     padding: 20px 0;
 }
@@ -121,12 +121,15 @@ a:hover{
     max-width: 100%;
     height: auto;
 }
+.product_details{
+    background-color: #d3e0c7;
+}
 .details{
     height: 60px;
-    background-color: #354f52;
+    background-color: #2e4d1d;
     border-radius: 5px;
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 #details{
     text-align: center;

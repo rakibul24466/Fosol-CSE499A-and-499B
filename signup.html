@@ -12,72 +12,72 @@
 <body>
     <nav>
         <ul>
-            <li><a href="welcome.html" target="_blank">Home</a></li>
-            <li><a href="about.html" target="_blank">About Us</a></li>
-            <li><a href="service.html" target="_blank">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Useful Links</a></li>
+            <li><a href="welcome.html">হোমপেজ</a></li>
+                <li><a href="about.html" target="_blank">আমাদের সম্পর্কে</a></li>
+                <li><a href="service.html" target="_blank">আমাদের সেবা</a></li>
+                <li><a href="#" target="_blank">যোগাযোগ</a></li>
+                <li><a href="#" target="_blank">উপকারী সংজুক</a></li>
         </ul>
     </nav>
     <div class="container">
         <div class="left-section">
-            <h1>FOSOL</h1>
-            <p>Your Trusted Partner in Agriculture</p>
+            <h1>ফসল</h1>
+            <p>কৃষিতে আপনার বিশ্বস্ত অংশীদার</p>
         </div>
         <div class="right-section">
-            <h2>Complete Sign Up</h2>
+            <h2>নিবন্ধন সম্পূর্ণ করুন</h2>
             <form action="signup.php" method="post">
                 <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="first_name" placeholder="First Name" required>
+                    <label for="firstName">নামের প্রথম অংশ:</label>
+                    <input type="text" id="firstName" name="first_name" placeholder="নামের প্রথম অংশ" required>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="last_name" placeholder="Last Name" required>
+                    <label for="lastName">নামের শেষাংশ:</label>
+                    <input type="text" id="lastName" name="last_name" placeholder="নামের শেষাংশ" required>
                 </div>
                 <div class="form-group">
-                    <label for="mobileNumber">Mobile Number:</label>
-                    <input type="tel" id="mobileNumber" name="mobile_number" placeholder="Mobile Number" required>
+                    <label for="mobileNumber">মোবাইল নম্বর:</label>
+                    <input type="tel" id="mobileNumber" name="mobile_number" placeholder="মোবাইল নম্বর" required>
                 </div>
                     <div class="form-group">
-                        <label  for="sex">Sex:</label><br>
+                        <label  for="sex">লিঙ্গ:</label><br>
                         <select id="sex" name="sex" required>
                             <option value="">Select Sex</option>
-                            <option value="male" selected>Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="male" selected>পুরুষ</option>
+                            <option value="female">মহিলা</option>
+                            <option value="other">অন্যান্য</option>
                         </select><br>
                     </div>
                     <div>
-                        <label id="city" for="city">Choose City:</label>
+                        <label id="city" for="city">শহর নির্বাচন:</label>
                         <select placeholder="Enter City" name="city" required name="city">
-                            <option value="Dhaka" selected>Dhaka</option>
-                            <option value="Sylhet">Sylhet</option>
-                            <option value="Barisal">Barisal</option>
-                            <option value="Rangpur">Rangpur</option>
-                            <option value="Chittagong">Chittagong</option>
-                            <option value="Khulna">Khulna</option>
-                            <option value="Rajshahi">Rajshahi</option>
-                            <option value="Mymensign">Mymengingh</option>
+                            <option value="Dhaka" selected>ঢাকা</option>
+                            <option value="Sylhet">সিলেট</option>
+                            <option value="Barisal">বরিশাল</option>
+                            <option value="Rangpur">রংপুর</option>
+                            <option value="Chittagong">চট্টগ্রাম</option>
+                            <option value="Khulna">খুলনা</option>
+                            <option value="Rajshahi">রাজশাহী</option>
+                            <option value="Mymensign">ময়মনসিংহ</option>
                         </select><br>
                     </div><br>
                     <div class="form-group">
-                        <label for="birthDate">Birth Date:</label>
-                        <input type="date" id="birthDate" name="birthDate" required>
+                        <label for="birthDate">জন্ম তারিখ:</label>
+                        <input type="date" id="birthDate" name="birthDate" placeholder="জন্ম তারিখ" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <label for="email">ইমেইল:</label>
+                        <input type="email" id="email" name="email" placeholder="ইমেইল" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <label for="password">পাসওয়ার্ড:</label>
+                        <input type="password" id="password" name="password" placeholder="পাসওয়ার্ড" required>
                     </div>
                     <br>
-                    <button type="submit" class="btn" name="save">Sign Up</button>
+                    <button type="submit" class="btn" name="save">নিবন্ধন করুন</button>
                     <div class="signup-prompt">
-                        <p>Already Have An Account? <a href="login.html" target="_blank">Log In</a></p>
+                        <p>ইতিমধ্যে একটি সদস্যপদ আছে? <a href="login.html" target="_blank">প্রবেশ করুন</a></p>
                     </div>
                 </form>
         </div>
@@ -86,7 +86,7 @@
     </div>
 
     <footer>
-        <p id="cr">&copy; 2023 FOSOL</p>
+        <p id="cr">&copy; 2023 ফসল</p>
     </footer>
 
 </body>

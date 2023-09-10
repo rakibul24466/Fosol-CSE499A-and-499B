@@ -86,6 +86,7 @@ a:hover{
     display: flex;
     justify-content: space-around;
     padding: 50px 0;
+    background-color: #d3e0c7;
 }
 
 .feature {
@@ -136,7 +137,7 @@ a:hover{
     margin-left: 30px;
 }
 footer {
-    background-color: #354f52;
+    background-color: #2e4d1d;
     color: #fff;
     text-align: center;
     position: fixed;

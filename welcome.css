@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #354f52;
+    background-color: #2e4d1d;
     color: #fff;
     padding: 20px 0;
 }
@@ -60,6 +60,7 @@ a:hover{
     display: flex;
     justify-content: space-around;
     padding: 50px 0;
+    background-color: #d3e0c7;
 }
 
 .feature {
@@ -84,7 +85,7 @@ a:hover{
 }
 
 .solution {
-    background-color: #fff;
+    background-color: #d3e0c7;
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 8px;
@@ -102,7 +103,7 @@ a:hover{
 }
 .details{
     height: 60px;
-    background-color: #354f52;
+    background-color: #2e4d1d;
     border-radius: 5px;
     text-align: center;
     color: white;
@@ -129,13 +130,13 @@ a:hover{
 .cnt{
     height: 200px;
     width: 2000;
-    background-color: #ddf4f7;
+    background-color: #d3e0c7;
     padding-top: 100px;
 
 }
 
 footer {
-    background-color: #354f52;
+    background-color: #2e4d1d;
     color: #fff;
     text-align: center;
     position: fixed;

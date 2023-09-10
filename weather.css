@@ -34,3 +34,31 @@ h1 {
     color: #2e4d1d; 
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.weather {
+    font-size: 24px;
+    color: #2e4d1d; 
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.btn {
+    background-color: #4b9741;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f07422;
+}

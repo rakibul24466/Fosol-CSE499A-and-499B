@@ -190,8 +190,8 @@ footer {
                 <li><a href="about.html">আমাদের সম্পর্কে</a></li>
                 <li><a href="service.html">আমাদের সেবা</a></li>
                 <li><a href="#">যোগাযোগ</a></li>
-                <li><a href="#">প্রোফাইল</a></li>
-                <li><a href="#">উপকারী সংজুক</a></li>
+                <li><a href="user_profile.php">প্রোফাইল</a></li>
+                <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li>
                 <li><a href="weather.html">আবহাওয়ার পূর্বাভাস</a></li>
             </ul>
         </nav>

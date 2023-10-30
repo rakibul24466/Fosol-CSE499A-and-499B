@@ -1,10 +1,15 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Fosol</title>
   <script src="https://kit.fontawesome.com/30054225a9.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -41,6 +46,7 @@
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       /* Slightly blackish transparent background */
+
     }
   </style>
 </head>
@@ -49,8 +55,8 @@
   <header class="">
     <nav class="bg-fosol-bg px-5 sticky top-0">
       <div class="navbar ">
-        <div class="flex-1">
-          <div class="dropdown">
+      <div class="flex-1">
+      <!-- <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -69,10 +75,10 @@
                 </ul>
               </li>
               <li><a>সফল</a></li>
-              <li><a>ব্লগ</a></li>
+              <li><a>একাউন্ট খুলুন</a></li>
               <li><a>ক্যারিয়ার</a></li>
             </ul>
-          </div>
+          </div> -->
           <a class="btn btn-ghost normal-case text-2xl">ফসল</a>
         </div>
         <div class="navbar-center hidden lg:flex ">
@@ -89,7 +95,7 @@
                 </ul>
               </details>
             </li>
-            <li><a>সফল</a></li>
+            <li><a href="signup.php">একাউন্ট খুলুন</a></li>
             <li><a>ব্লগ</a></li>
             <li><a>ক্যারিয়ার</a></li>
           </ul>
@@ -172,7 +178,7 @@
       <div class="my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 px-5">
         <!-- Card one -->
         <div class="card w-96 bg-base-100 shadow-xl">
-          <figure><img src="/Home/images-fosol/farmer.svg" alt="farmer" /></figure>
+          <figure><img src="farmer.svg" alt="farmer" /></figure>
           <div class="card-body text-center">
             <h2 class="text-2xl font-semibold text-fosol-btn">কৃষক</h2>
             <p class="text-gray-500">আমরা কৃষকদের অর্থায়ন, ইনপুট, কৃষি সংক্রান্ত পরামর্শ এবং বাজারে অনুপ্রবেশে/এক্সেসে
@@ -183,7 +189,7 @@
 
         <!-- Card 2 -->
         <div class="card w-96 bg-base-100 shadow-xl">
-          <figure><img src="/Home/images-fosol/industry.svg" alt="farmer" /></figure>
+          <figure><img src="industry.svg" alt="farmer" /></figure>
           <div class="card-body text-center">
             <h2 class="text-2xl font-semibold text-fosol-btn">কৃষিভিত্তিক প্রতিষ্ঠান</h2>
             <p class="text-gray-500">আমরা কৃষিভিত্তিক প্রতিষ্ঠানের সাথে কাজ করি যাতে তারা কৃষকদের মানসম্পন্ন ইনপুট এবং
@@ -193,7 +199,7 @@
         </div>
         <!-- Card 3 -->
         <div class="card w-96 bg-base-100 shadow-xl">
-          <figure><img src="/Home/images-fosol/payment.svg" alt="farmer" /></figure>
+          <figure><img src="payment.svg" alt="farmer" /></figure>
           <div class="card-body text-center">
             <h2 class="text-2xl font-semibold text-fosol-btn">ক্রেতা</h2>
             <p class="text-gray-500">আমরা বড় বড় এন্টারপ্রাইজ, পাইকারি ও খুচরা মার্কেটের ক্রেতাদের কাছে
@@ -211,7 +217,7 @@
     <div class="mt-36">
       <div class="hero  ">
         <div class="flex flex-col lg:flex-row gap-x-36">
-          <img src="/Home/images-fosol/tag1.webp" class=" rounded-lg shadow-2xl" />
+          <img src="tag1.webp" class=" rounded-lg shadow-2xl" />
           <div>
             <h1 class="text-5xl font-bold w-auto text-right leading-relaxed">কৃষকের জন্য বাজার প্রবেশাধিকার সহজীকরণ</h1>
             <p class="py-6 text-right text-gray-400">আমরা আমাদের প্রযুক্তি-সক্ষম সাপ্লাই চেইন নেটওয়ার্ক ব্যবহার করে
@@ -244,7 +250,7 @@
             </p>
           </div>
           <div class="flex flex-col items-center space-y-3">
-            <img class="w-14 rounded-full" src="/Home/images-fosol/user1.PNG" alt="">
+            <img class="w-14 rounded-full" src="user1.PNG" alt="">
             <h3 class="font-semibold">সোউদ বাবু</h3>
             <p class="text-sm text-gray-400">আলু চাষি</p>
           </div>
@@ -319,10 +325,10 @@
         </div>
       </div>
 
-    </section>
+    </section><br>br
 
     <!-- Our prizes -->
-    <section class="mt-36">
+    <!-- <section class="mt-36">
       <h1 class="text-5xl font-semibold text-center">পুরস্কার এবং স্বীকৃতি</h1>
       <div class="flex flex-wrap  justify-between mt-32">
         <div><img class="w-40" src="images-fosol/prize/prize1.png" alt=""></div>
@@ -331,11 +337,11 @@
         <div><img class="w-40" src="images-fosol/prize/prize4.png" alt=""></div>
         <div><img class="w-40" src="images-fosol/prize/prize5.jpg" alt=""></div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Our partners section -->
 
-    <section class="mt-36">
+    <!-- <section class="mt-36">
       <div>
         <h1 class="text-5xl font-semibold text-center">আমাদের অংশীদারসমূহ</h1>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-24 mt-28 w-3/4 mx-auto">
@@ -351,38 +357,43 @@
           <div><img class="w-28" src="images-fosol/partners/p-10.png" alt=""></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Membership -->
-    <section class="mt-36">
+    <!-- <section class="mt-36">
       <h1 class="text-5xl font-semibold text-center">আমাদের সদস্যপদসমূহ</h1>
       <div class="flex flex-wrap  justify-between mt-32">
-        <div><img class="w-40" src="images-fosol//Member/m-1.png" alt=""></div>
-        <div><img class="w-40" src="images-fosol//Member/m-2.png" alt=""></div>
-        <div><img class="w-40" src="images-fosol//Member/m-3.png" alt=""></div>
+        <div><img class="w-40" src="m-1.png" alt=""></div>
+        <div><img class="w-40" src="m-2.png" alt=""></div>
+        <div><img class="w-40" src="m-3.png" alt=""></div>
 
       </div>
     </section>
-
-    <!-- Form section -->
-    <section class="mt-36 p-12 bg-green-300 rounded">
-      <h1 class="text-4xl font-semibold text-center mb-5">আমাদের অংশীদার হোন</h1>
+ -->
+ <section id="message" class=" p-5 bg-green-300 rounded">
+      <h1 class="text-4xl font-semibold text-center mb-5">যোগাযোগের মাধ্যম</h1>
       <p class="text-center text-gray-600">যেকোন জিজ্ঞাসা বা আমাদের ব্যবসায়িক কার্যক্রমে আগ্রহী হলে আমাদের একটি বার্তা
         পাঠান এবং
         আমাদের টিমের পক্ষ থেকে আপনার সাথে যোগাযোগ করা হবে।</p>
       <div class="flex flex-col items-center">
-        <input class="border-b border-gray-400 block w-3/4 p-5 mt-5 bg-green-300" type="email" name=""
+        <form action="">
+        <input class="border-b  block w-3/4 p-5 mt-5 bg-green-300" type="text" name="naam"
+          placeholder="নাম" id="">
+        <input class="border-b  block w-3/4 p-5 mt-5 bg-green-300" type="email" name="mail"
           placeholder="ইমেইল" id="">
-        <input class="border-b border-gray-400 block w-3/4 p-5 mt-5   bg-green-300" type="tel" name=""
+        <input class="border-b  block w-3/4 p-5 mt-5   bg-green-300" type="tel" name="number"
           placeholder="মোবাইল নম্বর" id="">
-        <input class="border-b border-gray-400 block w-3/4 p-5 mt-5  bg-green-300" type="text" name=""
+        <input class="border-b  block w-3/4 p-5 mt-5  bg-green-300" type="text" name="message"
           placeholder="বার্তা" id="">
-        <input class="btn bg-fosol-btn w-3/4 text-white font-semibold border-none mt-5" type="submit"
-          value="প্রেরণ করুণ">
+        <input class="btn bg-fosol-btn w-3/4 text-white font-semibold border-none mt-5" type="submit" name="save"
+          value="প্রেরণ করুণ" id="mess">
+        </form>
       </div>
 
     </section>
   </main>
+      <!-- Form section -->
+
   <footer class="footer p-10 bg-neutral text-neutral-content mt-5 flex justify-around">
     <aside>
 

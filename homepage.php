@@ -18,6 +18,48 @@ if ($result->num_rows > 0) {
     echo "No results for the current user";
 }
 
+$productSql = "SELECT img_src, item_name, price FROM products";
+$productResult = $conn->query($productSql);
+
+// Create an empty array to store product data
+$productData = [];
+
+if ($productResult->num_rows > 0) {
+    // Loop through the product details and store them in the $productData array
+    while ($productRow = $productResult->fetch_assoc()) {
+        $productData[] = $productRow;
+    }
+} else {
+    echo "No products found in the database";
+}
+
+if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_name']) && isset($_POST['price']) ) {
+    // Get the product details
+    $img_src = $_POST['img_src'];
+    $item_name = $conn->real_escape_string($_POST['item_name']);
+    $price = $_POST['price'];
+
+    // Check if the product is already in the user's favorite list
+    $checkQuery = "SELECT * FROM fav_prod WHERE img_src = '$img_src' AND user_email = '$email'";
+    $checkResult = $conn->query($checkQuery);
+    
+    if ($checkResult->num_rows > 0) {
+        $_SESSION['message'] = "$item_name is already in your favorite list!";
+        $_SESSION['msg_type'] = "warning";
+    } else {
+        // Insert the product into the fav_prod table with user's email
+        $insertQuery = "INSERT INTO fav_prod (img_src, item_name, price, user_email) VALUES ('$img_src', '$item_name', $price, '$email')";
+        $result = $conn->query($insertQuery);
+        
+        if ($result) {
+        $_SESSION['message'] = "Product added to favourites!";
+        $_SESSION['msg_type'] = "success";
+        } else {
+            $_SESSION['message'] = "Failed to add the product to favorites!";
+            $_SESSION['msg_type'] = "danger";
+    }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,28 +111,18 @@ if ($result->num_rows > 0) {
     }
 
     #voiceButton {
-        background-color: #000000;
+        background-color: #333;
         color: white;
         border: none;
         border-radius: 10px;
         cursor: pointer;
     }
-
-    .search-form {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
+    #voiceButton:hover{
+        background-color: #f07422;
     }
-
-    .search-form input[type="text"] {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px 0 0 5px;
-    }
-
     .search-form button {
         background-color: #333;
-        color: #fff;
+        color: #ffff;
         border: none;
         padding: 10px 15px;
         cursor: pointer;
@@ -100,11 +132,6 @@ if ($result->num_rows > 0) {
         text-align: center;
     }
 
-    .hero p {
-        font-size: 24px;
-        margin-top: 20px;
-    }
-
     .btn {
         display: inline-block;
         padding: 10px;
@@ -112,9 +139,9 @@ if ($result->num_rows > 0) {
         color: #fff;
         text-decoration: none;
         font-weight: bold;
-        border-radius: 5px;
+        border-radius: 10px;
         margin-top: 0px;
-        margin-left: 100px;
+        margin-left: 10px;
         transition: background-color 0.3s;
     }
 
@@ -124,65 +151,6 @@ if ($result->num_rows > 0) {
 
     a:hover {
         color: #f07422;
-    }
-
-    .features {
-        display: flex;
-        justify-content: space-around;
-        padding: 50px 0;
-        background-color: #d3e0c7;
-    }
-
-    .feature {
-        text-align: center;
-    }
-
-    .feature img {
-        max-width: 100%;
-    }
-
-    .feature h2 {
-        font-size: 24px;
-        margin-top: 20px;
-    }
-
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-        padding: 2rem;
-        overflow: scroll;
-    }
-
-    .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    .product img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .product_details {
-        background-color: #d3e0c7;
-    }
-
-    .details {
-        height: 60px;
-        background-color: #2e4d1d;
-        border-radius: 5px;
-        text-align: center;
-        color: rgb(255, 255, 255);
-    }
-
-    #details {
-        text-align: center;
-        margin-left: 30px;
     }
 
     footer {
@@ -196,10 +164,94 @@ if ($result->num_rows > 0) {
         margin-top: 10px;
     }
 
-    .small-input {
-        width: 150px;
-    }
-    
+    .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+        .products h5.card-title {
+            font-weight: 600;
+        }
+
+        .products p.card-text {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* This will horizontally center the children */
+            gap: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .fas.fa-money-bill-wave {
+            font-size: 1.2rem;
+            color: green;
+            /* or any other color you prefer */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            /* stack child elements vertically */
+            justify-content: space-between;
+            /* evenly distribute available space between children */
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .icon-btn {
+            color: #ffffff;
+            background-color: #000000;
+            padding: 5px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-left: 70px;
+            width: 70px;
+            /* A fixed width to ensure consistency */
+            font-size: 0.7rem;
+        }
+
+        .icon-btn i {
+            display: block;
+            /* This makes the icon appear above the text */
+            margin-bottom: 2px;
+            /* Space between the icon and the text */
+            font-size: 1rem;
+        }
+
+        .icon-btn:hover {
+            background-color: #f07422;
+            /* Darker gray on hover */
+        }
+
+        .icon-btn:hover,
+        .icon-btn:hover i {
+            color: #ffffff;
+            /* Keeps the text and the icon white on hover */
+            text-decoration: none;
+        }
+        
+        #ttl{
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+        }
 </style>
 
 <body>
@@ -236,77 +288,44 @@ if ($result->num_rows > 0) {
     </section>
 
     </header>
-    
-    <!-- 
+    <h2 id="ttl">Browse Products</h2>
+    <section class="products bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <?php foreach ($productData as $product) { ?>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card card h-100 shadow-sm">
+                        <img src="<?php echo $product['img_src']; ?>" alt="<?php echo $product['item_name']; ?>" class="card-img-top">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3"><?php echo $product['item_name']; ?></h5>
 
-    <div class="details">
-        <h2 style="padding-top: 10px;" id="details">পণ্যের বিবরণ</h2>
+                            <div class="bottom-section">
+                                <div class="price-section mb-2">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span class="product-price"><?php echo $product['price']; ?>৳</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-5">
+
+                                    <form action="homepage.php" method="post">
+                                        <input type="hidden" name="img_src" value="<?php echo $product['img_src']; ?>">
+                                        <input type="hidden" name="item_name" value="<?php echo $product['item_name']; ?>">
+                                        <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                                        <button type="submit" name="favorite" title="Favorite" class="icon-btn">
+                                            <i class="fas fa-heart"></i>
+                                            Favorite
+                                        </button>
+                                    </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
     </div>
-    <div class="product_details">
-        <section class="products">
-            <div class="product">
-                <img src="/img/apple.jpeg" alt="Loading">
-                <h2>আপেল</h2>
-                
-            </div>
-            <div class="product">
-                <img src="/img/banana.jpeg" alt="Loading">
-                <h2>কলা</h2>
-                
-            </div>
-            <div class="product">
-                <img src="/img/orange.jpeg" alt="Loading">
-                <h2>কমলা</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/strawberry.jpeg" alt="Loading">
-                <h2>স্ট্রবেরি</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/grape.jpeg" alt="Loading">
-                <h2>আঙ্গুর</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/watermelone.jpeg" alt="Loading">
-                <h2>তরমুজ</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/mango.jpeg" alt="Loading">
-                <h2>আম</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/pineapple.jpeg" alt="Loading">
-                <h2>আনারস</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/lemon.jpeg" alt="Loading">
-                <h2>লেবু</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/papaya.jpeg" alt="Loading">
-                <h2>পেঁপে</h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/blueberry.jpeg" alt="Loading">
-                <h2>বিলবেরী </h2>
-            
-            </div>
-            <div class="product">
-                <img src="/img/pear.jpeg" alt="Loading">
-                <h2>নাশপাতি</h2>
-            
-            </div>
-    </section> 
-    </div>
-    -->
+</section>
+
     <footer>
         <p>&copy; 2023 ফসল.</p>
     </footer>

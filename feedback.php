@@ -71,6 +71,7 @@ if (isset($_POST['save'])) {
     </style>
 </head>
 <body>
+<?php include 'nav.php'; ?>
     <main>
     <div class="container mt-5">
         <div class="row justify-content-center">

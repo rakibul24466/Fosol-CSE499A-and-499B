@@ -325,7 +325,7 @@
         </div>
       </div>
 
-    </section><br>br
+    </section><br>
 
     <!-- Our prizes -->
     <!-- <section class="mt-36">

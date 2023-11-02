@@ -43,6 +43,7 @@ li{
     text-align: justify;
 }
 </style>
+<?php include 'nav.php'; ?>
 <body>
     <div class="container">
         <h1>আমাদের সম্পর্কে</h1>
@@ -84,6 +85,7 @@ li{
 
         </ul>
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>

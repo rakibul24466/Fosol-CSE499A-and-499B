@@ -190,7 +190,6 @@ footer {
                     <div class="form-group">
                         <label  for="sex">লিঙ্গ:</label><br>
                         <select id="sex" name="sex" required>
-                            <option value="">Select Sex</option>
                             <option value="male" selected>পুরুষ</option>
                             <option value="female">মহিলা</option>
                             <option value="other">অন্যান্য</option>

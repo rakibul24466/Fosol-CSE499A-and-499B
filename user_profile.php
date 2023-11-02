@@ -89,7 +89,7 @@
     </style>
 </head>
 <body>
-
+<?php include 'nav.php'; ?>
 <main>
     <section class="hero">
         <div class="container mt-5">

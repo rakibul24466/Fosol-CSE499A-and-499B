@@ -225,7 +225,7 @@ footer {
                     <br>
                     <button type="submit" class="btn" name="save">নিবন্ধন করুন</button>
                     <div class="signup-prompt">
-                        <p>ইতিমধ্যে একটি সদস্যপদ আছে? <a href="login.html" target="_blank">প্রবেশ করুন</a></p>
+                        <p>ইতিমধ্যে একটি সদস্যপদ আছে? <a href="login.php" target="_blank">প্রবেশ করুন</a></p>
                     </div>
                 </form>
         </div>

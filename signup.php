@@ -158,7 +158,7 @@ footer {
 }
 </style>
 <body>
-    <nav>
+    <!-- <nav>
         <ul>
             <li><a href="index.php">হোমপেজ</a></li>
                 <li><a href="about.php" target="_blank">আমাদের সম্পর্কে</a></li>
@@ -166,7 +166,7 @@ footer {
                 <li><a href="#" target="_blank">যোগাযোগ</a></li>
                 <li><a href="#" target="_blank">উপকারী সংজুক</a></li>
         </ul>
-    </nav>
+    </nav> -->
     <div class="container">
         <div class="left-section">
             <h1>ফসল</h1>

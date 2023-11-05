@@ -29,6 +29,10 @@
         color: #fff;
         font-weight: bold;
     }
+    a:hover {
+        color: #f07422;
+    }
+
 </style>
 
 <body>

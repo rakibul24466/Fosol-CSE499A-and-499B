@@ -160,9 +160,9 @@ footer {
 <body>
     <nav>
         <ul>
-            <li><a href="welcome.html">হোমপেজ</a></li>
-                <li><a href="about.html" target="_blank">আমাদের সম্পর্কে</a></li>
-                <li><a href="service.html" target="_blank">আমাদের সেবা</a></li>
+            <li><a href="index.php">হোমপেজ</a></li>
+                <li><a href="about.php" target="_blank">আমাদের সম্পর্কে</a></li>
+                <li><a href="service.php" target="_blank">আমাদের সেবা</a></li>
                 <li><a href="#" target="_blank">যোগাযোগ</a></li>
                 <li><a href="#" target="_blank">উপকারী সংজুক</a></li>
         </ul>

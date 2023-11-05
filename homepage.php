@@ -89,8 +89,8 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
     }
 
     header {
-        background-color: #2e4d1d;
-        color: #fff;
+        background-color: #DDFFBB;
+        color: black;
         padding: 20px 0;
     }
 
@@ -98,16 +98,19 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         list-style: none;
         display: flex;
         justify-content: center;
+        color: black;
     }
 
     nav li {
         margin: 0 20px;
+        color: black;
     }
 
     nav a {
         text-decoration: none;
         color: #fff;
         font-weight: bold;
+        color: black;
     }
 
     #voiceButton {
@@ -166,11 +169,15 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
 
     .product-card {
             transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+            height: 400px !important;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            
         }
         .products h5.card-title {
             font-weight: 600;
@@ -221,10 +228,11 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
             border-radius: 10px;
             transition: all 0.3s ease;
             text-decoration: none;
-            margin-left: 70px;
-            width: 70px;
-            /* A fixed width to ensure consistency */
+            margin-left: 20px;
+            width: 100%;
             font-size: 0.7rem;
+            margin-top: 1.5rem;
+            border: none;
         }
 
         .icon-btn i {
@@ -236,7 +244,7 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         }
 
         .icon-btn:hover {
-            background-color: #f07422;
+            background-color: #A4BC92;
             /* Darker gray on hover */
         }
 
@@ -251,6 +259,16 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
             text-align: center;
             padding-top: 10px;
             font-weight: bold;
+        }
+        .product-card img{
+            border-radius: 1.5rem;
+            width: 100%;
+        }
+        .voice-btn{
+            margin-right: 4px;
+        }
+        .input-group-append :hover{
+            background-color: #A4BC92 !important;
         }
 </style>
 
@@ -274,10 +292,12 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
             <div class="search-form mt-4">
                 <div class="input-group mb-3">
                     <input type="text" id="userInput" name="query" class="form-control" placeholder="Search for a product...">
-                    <div class="input-group-append">
+                    <div class="input-group-append voice-btn">
                         <button class="btn btn-dark" id="voiceButton" type="button" onclick="startVoiceInput()">
                             <i class="fas fa-microphone-alt"></i>
                         </button>
+                    </div>
+                    <div class="input-group-append ">
                         <button class="btn btn-dark" id="enterBtn" type="button" onclick="performSearch()">
                             <i class="fas fa-search"></i>
                         </button>
@@ -311,8 +331,8 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
                                         <input type="hidden" name="item_name" value="<?php echo $product['item_name']; ?>">
                                         <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
                                         <button type="submit" name="favorite" title="Favorite" class="icon-btn">
-                                            <i class="fas fa-heart"></i>
-                                            Favorite
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        কার্টে যোগ করুন
                                         </button>
                                     </form>
                                 

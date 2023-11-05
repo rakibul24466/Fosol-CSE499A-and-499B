@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <button type="submit" class="w-full bg-gradient-to-r from-green-200 to-green-500 text-gray-700 py-2 rounded-lg">প্রবেশ করুণ</button>
         </form>
-        <p class="mt-4 text-sm text-gray-600">এখনো ফসলের সদস্য না? <a href="signup.html" class="text-blue-500 hover:underline" target="_blank">নতুন একাউন্ট খুলুন!</a></p>
+        <p class="mt-4 text-sm text-gray-600">এখনো ফসলের সদস্য না? <a href="signup.php" class="text-blue-500 hover:underline" target="_blank">নতুন একাউন্ট খুলুন!</a></p>
     </div>
 
     <script>

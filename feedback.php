@@ -77,20 +77,20 @@ if (isset($_POST['save'])) {
         <div class="row justify-content-center">
             <div class="col-md-6 form-container">
                 <div class="text-center mb-4">
-                    <h1>Give Feedback</h1>
+                    <h1>মতামত দিন</h1>
                     <hr class="bg-dark">
                 </div>
                 <form action="feedback.php" method="post">
                     <div class="form-group mb-4">
-                        <input type="text" class="form-control" placeholder="Your Name" name="naam">
+                        <input type="text" class="form-control" placeholder="নাম" name="naam">
                     </div>
                     <div class="form-group mb-4">
-                        <input type="email" class="form-control" placeholder="Your Email" name="email">
+                        <input type="email" class="form-control" placeholder="ইমেইল" name="email">
                     </div>
                     <div class="form-group mb-4">
-                        <textarea class="form-control" placeholder="Your Message Here" name="feedback" rows="6"></textarea>
+                        <textarea class="form-control" placeholder="বার্তা লিখুন" name="feedback" rows="6"></textarea>
                     </div>
-                    <button type="submit" name="save" class="btn btn-primary">SEND</button>
+                    <button type="submit" name="save" class="btn btn-primary">পাঠান</button>
                 </form>
             </div>
         </div>

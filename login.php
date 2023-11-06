@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <style>
         body{
-            background-image: url("/img/login.jpg");
+            background-image: url("login.png");
             background-repeat: no-repeat;
             background-size: cover;
         }

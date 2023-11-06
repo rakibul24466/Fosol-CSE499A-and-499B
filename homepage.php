@@ -2,15 +2,13 @@
 include 'dbconnect.php';
 session_start();
 
-// Get the email of the logged-in user
 $email = $_SESSION['user_data']['email'];
 
-// SQL query to fetch first name and last name from the users table for the logged-in user
 $sql = "SELECT first_name, last_name FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Output data of each row
+
     while ($row = $result->fetch_assoc()) {
         $Name = $row["first_name"] . ' ' . $row["last_name"];
     }
@@ -21,11 +19,10 @@ if ($result->num_rows > 0) {
 $productSql = "SELECT img_src, item_name, price FROM products";
 $productResult = $conn->query($productSql);
 
-// Create an empty array to store product data
 $productData = [];
 
 if ($productResult->num_rows > 0) {
-    // Loop through the product details and store them in the $productData array
+
     while ($productRow = $productResult->fetch_assoc()) {
         $productData[] = $productRow;
     }
@@ -34,29 +31,25 @@ if ($productResult->num_rows > 0) {
 }
 
 if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_name']) && isset($_POST['price']) ) {
-    // Get the product details
+
     $img_src = $_POST['img_src'];
     $item_name = $conn->real_escape_string($_POST['item_name']);
     $price = $_POST['price'];
 
-    // Check if the product is already in the user's favorite list
     $checkQuery = "SELECT * FROM fav_prod WHERE img_src = '$img_src' AND user_email = '$email'";
     $checkResult = $conn->query($checkQuery);
     
     if ($checkResult->num_rows > 0) {
-        $_SESSION['message'] = "$item_name is already in your favorite list!";
-        $_SESSION['msg_type'] = "warning";
+        echo '<script>alert("Product already added to cart.");</script>';
     } else {
-        // Insert the product into the fav_prod table with user's email
+
         $insertQuery = "INSERT INTO fav_prod (img_src, item_name, price, user_email) VALUES ('$img_src', '$item_name', $price, '$email')";
         $result = $conn->query($insertQuery);
         
         if ($result) {
-        $_SESSION['message'] = "Product added to favourites!";
-        $_SESSION['msg_type'] = "success";
+            echo '<script>alert("Product added to cart.");</script>';
         } else {
-            $_SESSION['message'] = "Failed to add the product to favorites!";
-            $_SESSION['msg_type'] = "danger";
+            echo '<script>alert("Failed to add product to cart");</script>';
     }
     }
 }
@@ -263,6 +256,7 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         .product-card img{
             border-radius: 1.5rem;
             width: 100%;
+            height: 8rem;
         }
         .voice-btn{
             margin-right: 4px;

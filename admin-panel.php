@@ -15,6 +15,18 @@ if ($result->num_rows > 0) {
     echo "No results for the current user";
 }
 
+$query = "SELECT img_src FROM products ";
+$result = $conn->query($query);
+
+$totalImages = $result->num_rows;
+
+$countQuery = "SELECT COUNT(*) AS total_users FROM users";
+$countResult = $conn->query($countQuery);
+
+if ($countRow = $countResult->fetch_assoc()) {
+    $totalUsers = $countRow['total_users'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,7 +137,17 @@ if ($result->num_rows > 0) {
         <a href="orders.php">Orders</a>
         <a href="logout.php">Logout</a>
     </nav>
-       
+        <div class="dashboard">
+        <p style="text-align: center;">DASHBOARD</p>
+        </div>
+
+        <div class="red-container">
+        <p>Total Number of Products: <?php echo $totalImages; ?></p></p>
+    </div>
+
+    <div class="green-container">
+        <p>Total Number of Users: <?php echo $totalUsers; ?></p></p>
+    </div>
 </body>
 </html>
 </html>

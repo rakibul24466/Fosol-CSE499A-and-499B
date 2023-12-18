@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 02:39 PM
+-- Generation Time: Dec 18, 2023 at 05:28 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `fosol`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `full_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `pw` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`full_name`, `email`, `pw`) VALUES
+('Asif Bhuiyan', 'asif.bhuiyan3330@gmail.com', '12345678');
 
 -- --------------------------------------------------------
 
@@ -44,19 +63,18 @@ CREATE TABLE `fav_prod` (
   `img_src` varchar(255) DEFAULT NULL,
   `item_name` varchar(255) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
-  `user_email` varchar(255) DEFAULT NULL
+  `user_email` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `fav_prod`
 --
 
-INSERT INTO `fav_prod` (`img_src`, `item_name`, `price`, `user_email`) VALUES
-('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361311541.jpg', 'লাউ', '45.00', 'asif.bhuiyan3330@gmail.com'),
-('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361313551.jpg', 'বেগুন', '150.00', 'asif.bhuiyan3330@gmail.com'),
-('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361359138.png', 'বড় লাউ', '90.00', 'asif.bhuiyan3330@gmail.com'),
-('https://www.kalerkantho.com/_next/image?url=http%3A%2F%2Fcdn.kalerkantho.com%2Fpublic%2Fnews_images%2F2023%2F02%2F25%2F1677269240-a7230d6c26bdb0b1f61afb938f9203f1.jpg&w=1920&q=100', 'লেবু', '40.00', 'asif.bhuiyan3330@gmail.com'),
-('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361358723.jpg', 'শিম', '100.00', 'asif.bhuiyan3330@gmail.com');
+INSERT INTO `fav_prod` (`img_src`, `item_name`, `price`, `user_email`, `quantity`) VALUES
+('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361309612.jpg', 'মিষ্টি কুমরা', '30000.00', 'asif.bhuiyan3330@gmail.com', 5),
+('http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361359050.jpg', 'গাজর', '200.00', 'asif.bhuiyan3330@gmail.com', 2),
+('https://assets.telegraphindia.com/abp/2022/Oct/1666009025_new-project-2022-10-17t174645-846.jpg', 'আনারস', '110.00', 'asif.bhuiyan3330@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -77,6 +95,30 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`naam`, `email`, `feedback`) VALUES
 ('Asif', 'asif.bhuiyan3330@gmail.com', 'Good'),
 ('Asif', 'asif.bhuiyan3330@gmail.com', 'Good');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `serial` int(11) NOT NULL,
+  `img_src` varchar(255) DEFAULT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `user_email` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`serial`, `img_src`, `item_name`, `price`, `user_email`, `quantity`) VALUES
+(1, 'http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361309612.jpg', 'মিষ্টি কুমরা', '30000.00', 'asif.bhuiyan3330@gmail.com', 5),
+(2, 'http://nuriaenterprise.weebly.com/uploads/8/3/5/1/8351405/1361359050.jpg', 'গাজর', '200.00', 'asif.bhuiyan3330@gmail.com', 2),
+(3, 'https://assets.telegraphindia.com/abp/2022/Oct/1666009025_new-project-2022-10-17t174645-846.jpg', 'আনারস', '110.00', 'asif.bhuiyan3330@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -199,6 +241,26 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`first_name`, `last_name`, `mobile_number`, `sex`, `city`, `birth_date`, `email`, `pw`) VALUES
 ('Asif', 'Bhuiyan', '01632734014', 'male', 'Dhaka', '2023-10-09', 'asif.bhuiyan3330@gmail.com', 'asdfghjkl');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`serial`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `serial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -27,6 +27,16 @@ if ($countRow = $countResult->fetch_assoc()) {
     $totalUsers = $countRow['total_users'];
 }
 
+$query = "SELECT * FROM orders WHERE user_email = '$email'";
+$result = $conn->query($query);
+
+if (!$result) {
+    die("Query failed: " . $conn->error);
+}
+
+$totalOrders = mysqli_num_rows($result);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,6 +132,18 @@ if ($countRow = $countResult->fetch_assoc()) {
             text-decoration: none;
             color: white;
         }
+        .yellow-container {
+            background-color: violet;
+            padding: 20px;
+            margin-top: 20px;
+            margin-left: 270px;
+            width: 400px;
+            border-radius: 20px;
+        }
+        .yellow-container p{
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -147,6 +169,10 @@ if ($countRow = $countResult->fetch_assoc()) {
 
     <div class="green-container">
         <p>Total Number of Users: <?php echo $totalUsers; ?></p></p>
+    </div>
+
+    <div class="yellow-container">
+        <p>Total Number of Orders: <?php echo $totalOrders; ?></p></p>
     </div>
 </body>
 </html>

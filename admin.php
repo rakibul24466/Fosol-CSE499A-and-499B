@@ -3,10 +3,10 @@ include 'dbconnect.php';
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['pw']);
 
-    $sql = "SELECT * FROM admin WHERE username = '$username' and pw = '$password'";
+    $sql = "SELECT * FROM admin WHERE email = '$username' and pw = '$password'";
     $result = mysqli_query($conn, $sql); 
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set a cookie that expires when the session ends
         setcookie("user", $email, 0, "/"); // 0 means until the session ends
     
-        header("location: admin_panel.php"); // Redirect to welcome.php
+        header("location: admin-panel.php");
     } else {
         $error = "Your Email or Password is invalid";
     }
@@ -130,7 +130,7 @@ body {
             <div class="card-body">
                 <p style="text-align: center;" class="login-box-msg">FOSOL ADMIN PANEL</p><br>
 
-                <form action="authentication.php" method="post">
+                <form action="admin-panel.php" method="post">
                     <div class="input-group mb-3">
                         <input type="username" class="form-control" name="username" placeholder="Username">
                          <span class="fas fa-envelope"></span><br><br>

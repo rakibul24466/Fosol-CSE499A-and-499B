@@ -83,8 +83,8 @@
         </div>
         <div class="navbar-center hidden lg:flex ">
           <ul class="menu menu-horizontal px-1 space-x-5  items-center">
-            <li><a href="">আমাদের সম্পর্কে জানুন</a></li>
-            <li><a href="">আমাদের দল</a></li>
+            <li><a href="aboutus.php">আমাদের সম্পর্কে জানুন</a></li>
+            <!-- <li><a href="">আমাদের দল</a></li> -->
             <li tabindex="0">
               <details>
                 <summary>আমাদের সমাধান সমূহ</summary>
@@ -97,8 +97,8 @@
             </li>
             <li><a href="signup.php">একাউন্ট খুলুন</a></li>
             <li><a href="login.php">প্রবেশ করুন</a></li>
-            <li><a>ব্লগ</a></li>
-            <li><a>ক্যারিয়ার</a></li>
+            <!-- <li><a>ব্লগ</a></li>
+            <li><a>ক্যারিয়ার</a></li> -->
           </ul>
         </div>
         <div class="space-x-1">
@@ -135,14 +135,14 @@
         </div>
 
         <!-- Column 2 -->
-        <div class="w-1/4 sm:border-0 lg:border-r border-gray-600 p-0 lg:px-4 text-center">
+        <!-- <div class="w-1/4 sm:border-0 lg:border-r border-gray-600 p-0 lg:px-4 text-center">
           <div class="mb-4">
             <i class="fa-solid fa-money-bill text-4xl text-fosol-btn"></i>
 
           </div>
           <h2 class="text-xl font-bold">সহজ পেমেন্ট</h2>
           <p>ব্লকচেইন টেকনোলজি</p>
-        </div>
+        </div> -->
 
         <!-- Column 3 -->
         <div class="w-1/4 border-0 lg:border-r border-gray-600 p-0 lg:px-4 text-center">

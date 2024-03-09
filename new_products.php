@@ -142,8 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav>
             <ul>
                 <li><a href="homepage.php">হোমপেজ</a></li>
-                <li><a href="about.php">আমাদের সম্পর্কে</a></li>
-                <li><a href="service.php">আমাদের সেবা</a></li>
+                <!-- <li><a href="about.php">আমাদের সম্পর্কে</a></li>
+                <li><a href="service.php">আমাদের সেবা</a></li> -->
                 <li><a href="user_profile.php">প্রোফাইল</a></li>
                 <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li>
                 <li><a href="https://weather-six-theta.vercel.app/?fbclid=IwAR02yOudHnHDnmagcdeuMwOPBkppIL_2s4s9v5CLYIn_XrnxryJpzPXVO6U">আবহাওয়ার পূর্বাভাস</a></li>
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header><br><br><br>
 
     <div id="addProductForm">
-        <h1>নতুন পণ্য যোগ করুন</h1>
+        <h1 style="text-align: center;">নতুন পণ্য যোগ করুন</h1>
         <form method="post" enctype="multipart/form-data">
             <label for="image">ছবি:</label>
             <input type="file" id="image" name="image" required>

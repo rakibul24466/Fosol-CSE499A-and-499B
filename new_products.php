@@ -3,22 +3,36 @@ include 'dbconnect.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $imgSrc = $_POST['image'];
-    $itemName = $_POST['item_name'];
-    $price = $_POST['price'];
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+        $imgSrc = "images/" . basename($_FILES["image"]["name"]);
+        $uploadDir = "C:\\xampp\\htdocs\\Foshol\\new_prods\\";
+        $uploadFile = $uploadDir . basename($_FILES["image"]["name"]);
 
-    $sql = "INSERT INTO products (img_src, item_name, price) VALUES ('$imgSrc', '$itemName', '$price')";
+        if (!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
 
-    if ($conn->query($sql) === true) {
-        echo '<script>alert("Product Added Successfully");</script>';
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadFile)) {
+            $url = "https://" . $_SERVER['HTTP_HOST'] . "/Foshol/new_prods/" . basename($_FILES["image"]["name"]); 
+
+            $itemName = $_POST['item_name'];
+            $price = $_POST['price'];
+
+            $sql = "INSERT INTO products (img_src, item_name, price) VALUES ('$url', '$itemName', '$price')";
+            if ($conn->query($sql) === true) {
+                echo '<script>alert("Product Added Successfully");</script>';
+            } else {
+                echo '<script>alert("Could not add product");</script>';
+            }
+        } else {
+            echo '<script>alert("Sorry, there was an error uploading your file.");</script>';
+        }
     } else {
-        echo '<script>alert("Could not add product");</script>';
+        echo '<script>alert("No file was uploaded.");</script>';
     }
-
     $conn->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,10 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height: 40px;
             margin-top: 150px;
         }
-            a:hover {
-        color: #f07422;
-    }
 
+        a:hover {
+            color: #f07422;
+        }
     </style>
 </head>
 
@@ -141,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>নতুন পণ্য যোগ করুন</h1>
         <form method="post" enctype="multipart/form-data">
             <label for="image">ছবি:</label>
-            <input type="text" id="image" name="image" required>
+            <input type="file" id="image" name="image" required>
 
             <label for="item_name">পণ্যের নাম:</label>
             <input type="text" id="item_name" name="item_name" required>
@@ -151,6 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">জমা দিন</button>
         </form>
+        
     </div>
 
     <footer>

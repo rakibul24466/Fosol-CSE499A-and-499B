@@ -44,7 +44,6 @@
                 <li><a href="service.php">আমাদের সেবা</a></li> -->
                 <li><a href="favourite.php">প্রিয় পণ্য</a></li>
                 <li><a href="new_products.php">নতুন পণ্য যোগ করুন</a></li>
-                <li><a href="user_profile.php">প্রোফাইল</a></li>
                 <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li>
                 <li><a href="https://weather-six-theta.vercel.app/?fbclid=IwAR02yOudHnHDnmagcdeuMwOPBkppIL_2s4s9v5CLYIn_XrnxryJpzPXVO6U">আবহাওয়ার পূর্বাভাস</a></li>
             </ul>

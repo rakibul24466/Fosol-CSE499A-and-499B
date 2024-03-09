@@ -92,8 +92,11 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         display: flex;
         justify-content: center;
         color: black;
+        
     }
-
+    nav ul li a{
+        text-decoration: none;
+    }
     nav li {
         margin: 0 20px;
         color: black;
@@ -277,9 +280,8 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
                 <li><a href="service.php">আমাদের সেবা</a></li>
                 
                 <li><a href="user_profile.php">প্রোফাইল</a></li>
-                <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li>
+                <!-- <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li> -->
                 <li><a href="https://weather-six-theta.vercel.app/?fbclid=IwAR02yOudHnHDnmagcdeuMwOPBkppIL_2s4s9v5CLYIn_XrnxryJpzPXVO6U">আবহাওয়ার পূর্বাভাস</a></li>
-				<li><a href="new_products.php">নতুন পণ্য যোগ করুন</a></li>
                 <li><a href="disease_prediction.php">রোগ সনাক্তকরণ</a></li>
             </ul>
             

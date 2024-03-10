@@ -53,7 +53,7 @@ if ($row = $result->fetch_assoc()) {
                     <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
-                                <td colspan="7">
+                                <td colspan="8">
                                     <h2 class="text-center text-info m-0" style="color: black !important;">User Details</h2>
                                 </td>
                             </tr>

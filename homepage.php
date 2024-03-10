@@ -350,7 +350,6 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
     </footer>
 
     <script>
-        // Initialize variables
         const voiceButton = document.getElementById('voiceButton');
         const searchInput = document.getElementById('userInput');
 
@@ -387,6 +386,47 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         }
         // Add click event listener to the voice button
         voiceButton.addEventListener('click', toggleVoiceRecognition);
+
+        $(document).ready(function() {
+            $("#userInput").on('keyup', function() {
+                var query = $(this).val();
+                if (query != '') {
+                    $.ajax({
+                        url: 'search.php',
+                        method: 'POST',
+                        data: {
+                            query: query
+                        },
+                        success: function(data) {
+                            $('#productList').fadeIn();
+                            $('#productList').html(data);
+                        }
+                    });
+                }
+            });
+
+            $(document).on('click', 'li', function() {
+                $('#userInput').val($(this).text());
+                $('#productList').fadeOut();
+            });
+
+            $("#enterBtn").click(function() {
+                var query = $("#userInput").val();
+                if (query != '') {
+                    $.ajax({
+                        url: 'search.php',
+                        method: 'POST',
+                        data: {
+                            query: query
+                        },
+                        success: function(data) {
+                            $('#productList').fadeIn();
+                            $('#productList').html(data);
+                        }
+                    });
+                }
+            });
+        });
     </script>
 
 </body>

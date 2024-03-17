@@ -29,10 +29,45 @@
             font-size: 24px;
             color: black;
         }
+          header {
+        background-color: #2e4d1d;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    a:hover {
+        color: #f07422;
+    }
     </style>
 </head>
 
 <body>
+     <header>
+        <nav>
+            <ul>
+                <li><a href="homepage.php">হোমপেজ</a></li>
+                <li><a href="user_profile.php">প্রোফাইল</a></li>
+                <li><a href="https://weather-six-theta.vercel.app/?fbclid=IwAR02yOudHnHDnmagcdeuMwOPBkppIL_2s4s9v5CLYIn_XrnxryJpzPXVO6U">আবহাওয়ার পূর্বাভাস</a></li>
+                <li><a href="disease_prediction.php">রোগ সনাক্তকরণ</a></li>
+                <li><a href="qr.php">QR স্ক্যানার</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>রোগ সনাক্তকরণ</h1>
     <button id="turnOnCamera">
         <i class="fas fa-camera"></i>

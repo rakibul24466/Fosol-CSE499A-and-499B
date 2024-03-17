@@ -157,6 +157,7 @@ $totalOrders = mysqli_num_rows($result);
         <a href="user_details.php">Users</a>
         <a href="products.php">Products</a>
         <a href="orders.php">Orders</a>
+        <a href="qr_details.php">QR</a>
         <a href="logout.php">Logout</a>
     </nav>
         <div class="dashboard">

@@ -14,10 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<script>alert("Email or Password is incorrect");</script>';;
         } else {
             echo '<script>alert("Email or Password is incorrect");</script>';
-            // Query was successful, but no data was returned
         }
     } else {
-        // Query failed
         echo "Error: " . mysqli_error($conn);
     }
 
@@ -30,11 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = mysqli_num_rows($result);
     echo "$count";
     if ($count == 1) {
-        // Store user data in session
         $_SESSION['user_data'] = $row;
-    
-        // Set a cookie that expires when the session ends
-        setcookie("user", $email, 0, "/"); // 0 means until the session ends
+
+        setcookie("user", $email, 0, "/"); 
     
         header("location: admin-panel.php");
     } else {

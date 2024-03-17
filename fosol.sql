@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2024 at 06:07 PM
+-- Generation Time: Mar 17, 2024 at 11:24 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -212,10 +212,16 @@ INSERT INTO `products` (`img_src`, `item_name`, `price`) VALUES
 
 CREATE TABLE `qr` (
   `id` int(11) NOT NULL,
-  `qr_code` varchar(255) DEFAULT NULL,
-  `scan_count` int(11) DEFAULT 0,
-  `last_scan_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `qr_details` varchar(255) DEFAULT NULL,
+  `scan_count` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `qr`
+--
+
+INSERT INTO `qr` (`id`, `qr_details`, `scan_count`) VALUES
+(1, 'WIFI:T:WPA;P:sbabaawb;S:TP-Link;H:false;', 1);
 
 -- --------------------------------------------------------
 
@@ -256,7 +262,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `qr`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `qr_code` (`qr_code`);
+  ADD UNIQUE KEY `qr_code` (`qr_details`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -272,7 +278,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `qr`
 --
 ALTER TABLE `qr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

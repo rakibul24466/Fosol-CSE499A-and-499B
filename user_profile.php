@@ -1,17 +1,13 @@
 <?php
-    // Include your database connection file
     include 'dbconnect.php';
     session_start();
-    
-    // Get the email of the logged in user
     $email = $_SESSION['user_data']['email'];
-    
-    // SQL query to fetch name and email from the users table for the logged in user
+
     $sql = "SELECT first_name, last_name, mobile_number, city, sex, email FROM users WHERE email = '$email'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        // Output data of each row
+
         while($row = $result->fetch_assoc()) {
             $Name = $row["first_name"] . ' ' . $row["last_name"];
             $Email = $row["email"];

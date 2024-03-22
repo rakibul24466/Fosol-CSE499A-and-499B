@@ -18,7 +18,7 @@ if (isset($_POST['save'])) {
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Sign Up Successful');</script>";
-        setcookie("user", $email, 0, "/"); // 0 means until the session ends
+        setcookie("user", $email, 0, "/"); 
     } else {
         $message = "Error: " . $sql . "<br>" . $conn->error;
     }

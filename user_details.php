@@ -7,7 +7,6 @@ $email = $_SESSION['user_data']['email'];
 $query = "SELECT first_name, last_name, mobile_number, sex, city, birth_date, email, pw FROM users WHERE email = '$email'";
 $result = $conn->query($query);
 
-// Assuming you expect only one row, use if instead of while
 if ($row = $result->fetch_assoc()) {
     ?>
 

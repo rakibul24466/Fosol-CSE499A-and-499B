@@ -5,7 +5,6 @@ session_start();
 $email = $_SESSION['user_data']['email'];
 
 if (isset($_POST['remove']) && isset($_POST['img_src'])) {
-    // Get the img_src of the product to remove
     $imgSrcToRemove = $_POST['img_src'];
 
     $removeQuery = "DELETE FROM products WHERE img_src = '$imgSrcToRemove' AND user_email = '$email'";
@@ -81,7 +80,7 @@ $result = $conn->query($query);
                                     <td>
                                         <form action="favourite.php" method="post">
                                             <input type="hidden" name="img_src" value="<?php echo $row['img_src']; ?>">
-                                            <input type="hidden" name="item_name" value="<?php echo $row['item_name']; ?>"> <!-- Include the product name -->
+                                            <input type="hidden" name="item_name" value="<?php echo $row['item_name']; ?>"> 
                                             <button type="submit" name="remove" class="btn btn-danger">Remove</button>
                                         </form>
                                     </td>

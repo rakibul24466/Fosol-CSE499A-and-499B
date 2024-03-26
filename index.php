@@ -27,7 +27,7 @@
     };
   </script>
   <style>
-    /* Custom styles */
+
     .video-container {
       position: relative;
       overflow: hidden;
@@ -45,7 +45,7 @@
 
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
-      /* Slightly blackish transparent background */
+
 
     }
   </style>

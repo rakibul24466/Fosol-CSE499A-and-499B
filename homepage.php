@@ -188,7 +188,6 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
             display: flex;
             align-items: center;
             justify-content: center;
-            /* This will horizontally center the children */
             gap: 0.5rem;
         }
 
@@ -200,15 +199,12 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         .fas.fa-money-bill-wave {
             font-size: 1.2rem;
             color: green;
-            /* or any other color you prefer */
         }
 
         .card-body {
             display: flex;
             flex-direction: column;
-            /* stack child elements vertically */
             justify-content: space-between;
-            /* evenly distribute available space between children */
         }
 
         .product-card {
@@ -233,21 +229,20 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
 
         .icon-btn i {
             display: block;
-            /* This makes the icon appear above the text */
+        
             margin-bottom: 2px;
-            /* Space between the icon and the text */
+        
             font-size: 1rem;
         }
 
         .icon-btn:hover {
             background-color: #A4BC92;
-            /* Darker gray on hover */
+    
         }
 
         .icon-btn:hover,
         .icon-btn:hover i {
             color: #ffffff;
-            /* Keeps the text and the icon white on hover */
             text-decoration: none;
         }
         
@@ -283,6 +278,7 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
                 <!-- <li><a href="feedback.php">প্রতিক্রিয়া জানান</a></li> -->
                 <li><a href="https://weather-six-theta.vercel.app/?fbclid=IwAR02yOudHnHDnmagcdeuMwOPBkppIL_2s4s9v5CLYIn_XrnxryJpzPXVO6U">আবহাওয়ার পূর্বাভাস</a></li>
                 <li><a href="disease_prediction.php">রোগ সনাক্তকরণ</a></li>
+                <li><a href="qr.php">QR স্ক্যানার</a></li>
             </ul>
             
         </nav>
@@ -311,36 +307,35 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
     <section class="products bg-light py-5">
     <div class="container">
         <div class="row">
-            <?php foreach ($productData as $product) { ?>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="product-card card h-100 shadow-sm">
-                        <img src="<?php echo $product['img_src']; ?>" alt="<?php echo $product['item_name']; ?>" class="card-img-top">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-3"><?php echo $product['item_name']; ?></h5>
+            <?php foreach ($productData as $product) {?>
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="product-card card h-100 shadow-sm">
+            <img src="<?php echo $product['img_src']; ?>" alt="<?php echo $product['item_name']; ?>" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-3 text-center"><?php echo $product['item_name']; ?></h5>
 
-                            <div class="bottom-section">
-                                <div class="price-section mb-2">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    <span class="product-price"><?php echo $product['price']; ?>৳</span>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mb-5">
-
-                                    <form action="homepage.php" method="post">
-                                        <input type="hidden" name="img_src" value="<?php echo $product['img_src']; ?>">
-                                        <input type="hidden" name="item_name" value="<?php echo $product['item_name']; ?>">
-                                        <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
-                                        <button type="submit" name="favorite" title="Favorite" class="icon-btn">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                        কার্টে যোগ করুন
-                                        </button>
-                                    </form>
-                                
-                                </div>
-                            </div>
-                        </div>
+                <div class="bottom-section">
+                    <div class="price-section mb-2">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="product-price"><?php echo $product['price']; ?>৳</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                        <form action="homepage.php" method="post">
+                            <input type="hidden" name="img_src" value="<?php echo $product['img_src']; ?>">
+                            <input type="hidden" name="item_name" value="<?php echo $product['item_name']; ?>">
+                            <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                            <button type="submit" name="favorite" title="Favorite" class="icon-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                কার্টে যোগ করুন
+                            </button>
+                        </form>
                     </div>
                 </div>
-            <?php } ?>
+            </div>
+        </div>
+    </div>
+<?php }?>
+
         </div>
     </div>
 </section>
@@ -356,7 +351,6 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
         let isListening = false;
         let recognition;
 
-        // voice input
         function toggleVoiceRecognition() {
             if (!isListening) {
                 isListening = true;
@@ -384,7 +378,7 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
                 recognition.stop();
             }
         }
-        // Add click event listener to the voice button
+
         voiceButton.addEventListener('click', toggleVoiceRecognition);
 
         $(document).ready(function() {

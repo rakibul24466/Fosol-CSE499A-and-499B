@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];
 
-    // Check if the entered email matches any email in the database
     $sql = "SELECT email FROM users WHERE email=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $entered_email);
@@ -18,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user) {
         $email = $user['email'];
 
-        // Now that we have verified the email, check the old password and update the password
         $sql = "SELECT pw FROM users WHERE email=?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
@@ -32,18 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("ss", $new_password, $email);
 
             if ($stmt->execute()) {
-                // Password changed successfully
                 echo '<script>alert("Password changed successfully!");</script>';
             } else {
-                // Error changing password
+
                 echo '<script>alert("Error changing password.");</script>';
             }
         } else {
-            // Old password does not match
+
             echo '<script>alert("Old password does not match.");</script>';
         }
     } else {
-        // Email not found in the database
+
         echo '<script>alert("Email not found in the database.");</script>';
     }
 }
@@ -54,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
@@ -103,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <!-- Include Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

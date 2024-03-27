@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
 }
 
 if (isset($_POST['update'])) {
-    // Get the user's name and email address
+
     $new_first_name = $_POST["new_first_name"];
     $new_last_name = $_POST["new_last_name"];
     $new_mobile_number = $_POST["new_mobile_number"];
@@ -22,7 +22,6 @@ if (isset($_POST['update'])) {
     $new_city = $_POST["new_city"];
     $new_birth_date = $_POST["new_birth_date"];
 
-    // Save the user's data to the database
     $sql = "UPDATE users SET first_name='$new_first_name', last_name='$new_last_name', mobile_number='$new_mobile_number', sex='$new_sex', city='$new_city', birth_date='$new_birth_date' WHERE email='$Email'";
     if ($conn->query($sql) === TRUE) {
         $message = "Information Successfully Updated";

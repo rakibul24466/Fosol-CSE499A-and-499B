@@ -28,10 +28,8 @@ if (isset($_POST['order']) && isset($_POST['img_src']) && isset($_POST['item_nam
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
-    // Calculate the total price
     $totalPrice = $price * $quantity;
 
-    // Update the price in fav_prod table
     $updatePriceQuery = "UPDATE fav_prod SET price = '$totalPrice' WHERE img_src = '$imgSrc' AND user_email = '$email'";
     if ($conn->query($updatePriceQuery)) {
         // echo '<script>alert("Price updated in cart.");</script>';
@@ -39,7 +37,6 @@ if (isset($_POST['order']) && isset($_POST['img_src']) && isset($_POST['item_nam
         // echo '<script>alert("Error updating price in cart: ' . $conn->error . '");</script>';
     }
 
-    // Insert the order into the orders table
     $insertOrderQuery = "INSERT INTO orders (img_src, item_name, price, user_email, quantity)
                         SELECT img_src, item_name, price, user_email, quantity FROM fav_prod
                         WHERE img_src = '$imgSrc' AND user_email = '$email'";

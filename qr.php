@@ -16,7 +16,7 @@
   }
 
   #app {
-    background: #263238;
+    background: #1b7314;
     display: flex;
     align-items: stretch;
     justify-content: stretch;
@@ -35,7 +35,7 @@
   .sidebar h2 {
     font-weight: normal;
     font-size: 1.0rem;
-    background: #607d8b;
+    background: #38803c;
     color: #fff;
     padding: 10px;
     margin: 0;

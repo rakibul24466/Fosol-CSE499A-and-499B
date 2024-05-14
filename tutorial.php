@@ -82,7 +82,6 @@ header {
         color: #f07422;
     }
 
-    }
     #voiceButton {
         background-color: #333;
         color: white;

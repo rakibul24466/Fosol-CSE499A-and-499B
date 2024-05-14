@@ -10,8 +10,6 @@ if (isset($_POST['save'])) {
 
     if ($conn->query($sql) === TRUE) {
         $message = "Feedback Sent";
-    
-        // Set a cookie that expires when the session ends
         setcookie("user", $email, 0, "/"); // 0 means until the session ends
 
     } else {

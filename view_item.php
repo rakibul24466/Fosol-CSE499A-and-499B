@@ -2,11 +2,9 @@
 include 'dbconnect.php';
 session_start();
 
-// Retrieve the product img_src from the URL
 if (isset($_GET['img_src'])) {
     $img_src = urldecode($_GET['img_src']);
 
-    // Query to retrieve product details based on img_src
     $sql = "SELECT * FROM products WHERE img_src = '$img_src'";
     $result = $conn->query($sql);
 
@@ -14,11 +12,11 @@ if (isset($_GET['img_src'])) {
         $product = $result->fetch_assoc();
     } else {
         echo "Product not found";
-        exit; // Exit if product not found
+        exit; 
     }
 } else {
-    echo "Product img_src not provided";
-    exit; // Exit if product img_src not provided
+    echo "Product Image Source not provided";
+    exit; 
 }
 ?>
 <!DOCTYPE html>

@@ -400,7 +400,7 @@
 
       <p class="text-4xl font-semibold">ফসল<br /><span class="text-xl text-gray-400">বাংলার ডিজিটাল কৃষি</span></p>
     </aside>
-    <nav>
+    <!-- <nav>
       <header class="footer-title">সামাজিক মাধ্যম</header>
       <div class="grid grid-flow-col gap-4">
         <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -419,7 +419,7 @@
             </path>
           </svg></a>
       </div>
-    </nav>
+    </nav> -->
 
   </footer>
 </body>

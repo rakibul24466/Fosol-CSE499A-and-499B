@@ -421,6 +421,14 @@ if (isset($_POST['favorite']) && isset($_POST['img_src']) && isset($_POST['item_
                 }
             });
         });
+        $(document).on('click', 'li', function() {
+    // Get the img_src of the clicked product
+    var img_src = $(this).data('img-src');
+    
+    // Redirect to view_item.php with img_src in the URL
+    window.location.href = 'view_item.php?img_src=' + encodeURIComponent(img_src);
+});
+
     </script>
 
 </body>

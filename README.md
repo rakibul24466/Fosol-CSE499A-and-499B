@@ -1,4 +1,4 @@
-# Crops-Disease-Detection
+# Crops-Disease-Detection Backend
 * In this project we are using convolutional Neural Network for classifying Leaf images into 39 Different Categories. The Convolutional Neural Code build in Pytorch Framework. For Training we are using Plant village dataset and peddy doctor dataset. Dataset Link is in My Blog Section.
 
 ## Run Project in your Machine
